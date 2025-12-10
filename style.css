@@ -1,13 +1,13 @@
 /* ================================================= */
-/* GLOBAL RESET & TYPOGRAPHY */
+/* GLOBAL RESET & TYPOGRAPHY (Identique) */
 /* ================================================= */
 :root {
-    --color-dark-bg: #1e1f26;     /* Discord-like dark background */
-    --color-card-bg: #292b33;     /* Slightly lighter card background */
-    --color-accent: #ffcc00;      /* Gold/Yellow accent color (for HatchTracker theme) */
+    --color-dark-bg: #1e1f26;
+    --color-card-bg: #292b33;
+    --color-accent: #ffcc00;
     --color-text-light: #fefefe;
-    --color-text-dim: #b9bbbe;    /* Discord gray text */
-    --color-success: #3cb462;     /* Green for CTA button */
+    --color-text-dim: #b9bbbe;
+    --color-success: #3cb462;
     --font-family: 'Poppins', sans-serif;
 }
 
@@ -46,7 +46,7 @@ section {
 }
 
 /* ================================================= */
-/* HEADER & NAVIGATION */
+/* HEADER & NAVIGATION (Identique) */
 /* ================================================= */
 header {
     background-color: var(--color-card-bg);
@@ -60,14 +60,12 @@ header {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* --- LOGO TEXT STYLE --- */
 .logo-text {
     font-size: 1.8em;
     margin: 0;
     color: var(--color-accent);
     font-weight: 700;
 }
-/* --- END LOGO TEXT STYLE --- */
 
 nav ul {
     list-style: none;
@@ -86,7 +84,6 @@ nav a {
     font-size: 0.9em;
 }
 
-/* Invite Button */
 .invite-button {
     background-color: var(--color-success);
     color: var(--color-text-light) !important;
@@ -101,7 +98,7 @@ nav a {
 
 
 /* ================================================= */
-/* HERO SECTION */
+/* HERO SECTION (Identique) */
 /* ================================================= */
 .hero {
     min-height: 80vh;
@@ -158,7 +155,7 @@ nav a {
 }
 
 /* ================================================= */
-/* FEATURE SECTION */
+/* FEATURE SECTION (Identique) */
 /* ================================================= */
 .features {
     background-color: var(--color-card-bg);
@@ -196,7 +193,7 @@ nav a {
 }
 
 /* ================================================= */
-/* EGG GALLERY STYLES */
+/* EGG GALLERY STYLES (CORRIGÉ 3x2) */
 /* ================================================= */
 .egg-gallery-container {
     text-align: center;
@@ -204,29 +201,34 @@ nav a {
 }
 
 .egg-gallery {
+    /* Utilisation de Flexbox pour contrôler le retour à la ligne */
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px; /* Plus d'espace entre les carrés */
     margin: 0 auto 20px auto;
     padding: 10px 0;
     flex-wrap: wrap; 
-    max-width: 900px; 
+    max-width: 600px; /* Limite la largeur pour forcer 3x2 */
 }
 
 .egg-gallery img {
-    width: 65px; 
-    height: 65px;
-    object-fit: contain; /* Assure que l'image est visible même si le lien est lent */
+    /* Carrés aux bords arrondis */
+    width: 100px; 
+    height: 100px;
+    border-radius: 10px; /* Bords arrondis */
+    
+    display: block;
+    object-fit: contain;
+    
     background-color: var(--color-dark-bg);
-    border-radius: 50%;
     border: 3px solid var(--color-accent);
     padding: 5px;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .egg-gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px var(--color-accent);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--color-accent);
 }
 
 .egg-count-claim {
@@ -240,7 +242,7 @@ nav a {
 
 
 /* ================================================= */
-/* COMMANDS SECTION */
+/* COMMANDS SECTION (Identique) */
 /* ================================================= */
 .commands {
     text-align: center;
@@ -283,7 +285,7 @@ nav a {
 }
 
 /* ================================================= */
-/* UPDATES / PATCH NOTES SECTION */
+/* UPDATES / PATCH NOTES SECTION (Identique) */
 /* ================================================= */
 .updates {
     background-color: var(--color-dark-bg);
@@ -334,7 +336,7 @@ nav a {
 
 
 /* ================================================= */
-/* FOOTER */
+/* FOOTER (Identique) */
 /* ================================================= */
 footer {
     background-color: var(--color-card-bg);
