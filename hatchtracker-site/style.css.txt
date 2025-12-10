@@ -1,0 +1,263 @@
+/* ================================================= */
+/* GLOBAL RESET & TYPOGRAPHY */
+/* ================================================= */
+:root {
+    --color-dark-bg: #1e1f26;     /* Discord-like dark background */
+    --color-card-bg: #292b33;     /* Slightly lighter card background */
+    --color-accent: #ffcc00;      /* Gold/Yellow accent color (for HatchTracker theme) */
+    --color-text-light: #fefefe;
+    --color-text-dim: #b9bbbe;    /* Discord gray text */
+    --color-success: #3cb462;     /* Green for CTA button */
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-text-light);
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    color: var(--color-accent);
+}
+
+section {
+    padding: 60px 5%;
+}
+
+/* ================================================= */
+/* HEADER & NAVIGATION */
+/* ================================================= */
+header {
+    background-color: var(--color-card-bg);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    margin: 0;
+    color: var(--color-text-light);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav a {
+    color: var(--color-text-dim);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/* Invite Button */
+.invite-button {
+    background-color: var(--color-success);
+    color: var(--color-text-light) !important;
+    padding: 8px 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.invite-button:hover {
+    background-color: #349856; /* Darker green on hover */
+}
+
+
+/* ================================================= */
+/* HERO SECTION */
+/* ================================================= */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--color-accent);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    color: var(--color-text-dim);
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    background: var(--color-card-bg); /* Placeholder background */
+    height: 400px;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    font-size: 1.5em;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-dark-bg) !important;
+    font-weight: 700;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    background-color: #f5e08c; /* Lighter yellow on hover */
+    transform: translateY(-2px);
+}
+
+/* ================================================= */
+/* FEATURE SECTION */
+/* ================================================= */
+.features {
+    background-color: var(--color-card-bg);
+    text-align: center;
+}
+
+.features h3 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: var(--color-dark-bg);
+    padding: 25px;
+    border-radius: 8px;
+    text-align: left;
+    border-top: 4px solid var(--color-accent);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.feature-item h4 {
+    font-size: 1.3em;
+    color: var(--color-text-light);
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: var(--color-text-dim);
+}
+
+
+/* ================================================= */
+/* COMMANDS SECTION */
+/* ================================================= */
+.commands {
+    text-align: center;
+}
+
+.commands h3 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.command-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.command-item {
+    background-color: var(--color-card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.command-item code {
+    display: inline-block;
+    background-color: var(--color-dark-bg);
+    color: var(--color-accent);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.command-item p {
+    color: var(--color-text-dim);
+}
+
+/* ================================================= */
+/* FOOTER */
+/* ================================================= */
+footer {
+    background-color: var(--color-card-bg);
+    text-align: center;
+    padding: 20px 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    color: var(--color-text-dim);
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.social-links a {
+    color: var(--color-text-light);
+    margin: 0 10px;
+    font-size: 0.9em;
+}
+
+.social-links a:hover {
+    color: var(--color-accent);
+}
