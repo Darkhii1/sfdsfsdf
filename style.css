@@ -64,7 +64,7 @@ header {
 .logo-text {
     font-size: 1.8em;
     margin: 0;
-    color: var(--color-accent); /* Utilise la couleur or/jaune */
+    color: var(--color-accent);
     font-weight: 700;
 }
 /* --- END LOGO TEXT STYLE --- */
@@ -96,7 +96,7 @@ nav a {
 }
 
 .invite-button:hover {
-    background-color: #349856; /* Darker green on hover */
+    background-color: #349856;
 }
 
 
@@ -128,7 +128,7 @@ nav a {
 }
 
 .hero-image {
-    background: var(--color-card-bg); /* Placeholder background */
+    background: var(--color-card-bg);
     height: 400px;
     width: 40%;
     border-radius: 10px;
@@ -153,7 +153,7 @@ nav a {
 }
 
 .cta-button:hover {
-    background-color: #f5e08c; /* Lighter yellow on hover */
+    background-color: #f5e08c;
     transform: translateY(-2px);
 }
 
@@ -194,6 +194,49 @@ nav a {
 .feature-item p {
     color: var(--color-text-dim);
 }
+
+/* ================================================= */
+/* EGG GALLERY STYLES */
+/* ================================================= */
+.egg-gallery-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.egg-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 20px auto;
+    padding: 10px 0;
+    flex-wrap: wrap; 
+    max-width: 900px; 
+}
+
+.egg-gallery img {
+    width: 65px; 
+    height: 65px;
+    object-fit: contain; /* Assure que l'image est visible même si le lien est lent */
+    background-color: var(--color-dark-bg);
+    border-radius: 50%;
+    border: 3px solid var(--color-accent);
+    padding: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.egg-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--color-accent);
+}
+
+.egg-count-claim {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-text-light);
+}
+/* ================================================= */
+/* END EGG GALLERY STYLES */
+/* ================================================= */
 
 
 /* ================================================= */
@@ -314,42 +357,4 @@ footer p {
 
 .social-links a:hover {
     color: var(--color-accent);
-}
-
-/* ================================================= */
-/* EGG GALLERY STYLES */
-/* ================================================= */
-.egg-gallery-container {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.egg-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    padding: 10px 0;
-}
-
-.egg-gallery img {
-    width: 60px; /* Taille idéale pour un aperçu */
-    height: 60px;
-    object-fit: contain;
-    background-color: var(--color-dark-bg);
-    border-radius: 50%;
-    border: 3px solid var(--color-accent);
-    padding: 5px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.egg-gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px var(--color-accent);
-}
-
-.egg-count-claim {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: var(--color-text-light);
 }
