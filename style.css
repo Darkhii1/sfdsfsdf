@@ -315,3 +315,41 @@ footer p {
 .social-links a:hover {
     color: var(--color-accent);
 }
+
+/* ================================================= */
+/* EGG GALLERY STYLES */
+/* ================================================= */
+.egg-gallery-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.egg-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+.egg-gallery img {
+    width: 60px; /* Taille idéale pour un aperçu */
+    height: 60px;
+    object-fit: contain;
+    background-color: var(--color-dark-bg);
+    border-radius: 50%;
+    border: 3px solid var(--color-accent);
+    padding: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.egg-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--color-accent);
+}
+
+.egg-count-claim {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-text-light);
+}
