@@ -60,11 +60,14 @@ header {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.logo h1 {
+/* --- LOGO TEXT STYLE --- */
+.logo-text {
     font-size: 1.8em;
     margin: 0;
-    color: var(--color-text-light);
+    color: var(--color-accent); /* Utilise la couleur or/jaune */
+    font-weight: 700;
 }
+/* --- END LOGO TEXT STYLE --- */
 
 nav ul {
     list-style: none;
@@ -235,6 +238,57 @@ nav a {
 .command-item p {
     color: var(--color-text-dim);
 }
+
+/* ================================================= */
+/* UPDATES / PATCH NOTES SECTION */
+/* ================================================= */
+.updates {
+    background-color: var(--color-dark-bg);
+    text-align: center;
+}
+
+.updates h3 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.patch-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.patch-item {
+    background-color: var(--color-card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.patch-item h4 {
+    color: var(--color-text-light);
+    margin-bottom: 5px;
+}
+
+.patch-item .patch-date {
+    color: var(--color-accent);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.patch-item ul {
+    list-style: disc;
+    margin-left: 20px;
+    color: var(--color-text-dim);
+}
+
+.patch-item ul li {
+    margin-bottom: 5px;
+}
+
 
 /* ================================================= */
 /* FOOTER */
