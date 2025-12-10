@@ -1,13 +1,13 @@
 /* ================================================= */
-/* GLOBAL RESET & TYPOGRAPHY (Identique) */
+/* GLOBAL RESET & TYPOGRAPHY */
 /* ================================================= */
 :root {
-    --color-dark-bg: #1e1f26;
-    --color-card-bg: #292b33;
-    --color-accent: #ffcc00;
+    --color-dark-bg: #1e1f26;     /* Discord-like dark background */
+    --color-card-bg: #292b33;     /* Slightly lighter card background */
+    --color-accent: #ffcc00;      /* Gold/Yellow accent color */
     --color-text-light: #fefefe;
-    --color-text-dim: #b9bbbe;
-    --color-success: #3cb462;
+    --color-text-dim: #b9bbbe;    /* Discord gray text */
+    --color-success: #3cb462;     /* Green for CTA button */
     --font-family: 'Poppins', sans-serif;
 }
 
@@ -46,7 +46,7 @@ section {
 }
 
 /* ================================================= */
-/* HEADER & NAVIGATION (Identique) */
+/* HEADER & NAVIGATION */
 /* ================================================= */
 header {
     background-color: var(--color-card-bg);
@@ -58,6 +58,20 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    display: flex; /* Aligne le logo et le texte */
+    align-items: center;
+}
+
+/* Nouveau style pour le Logo Rond */
+.site-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
 }
 
 .logo-text {
@@ -96,9 +110,8 @@ nav a {
     background-color: #349856;
 }
 
-
 /* ================================================= */
-/* HERO SECTION (Identique) */
+/* HERO SECTION */
 /* ================================================= */
 .hero {
     min-height: 80vh;
@@ -125,16 +138,12 @@ nav a {
 }
 
 .hero-image {
-    background: var(--color-card-bg);
-    height: 400px;
+    /* Le style de l'image est géré dans le HTML pour ce cas spécifique */
+    /* background: var(--color-card-bg); -- Enlevé car on a une vraie image maintenant */
     width: 40%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-accent);
-    font-size: 1.5em;
 }
 
 .cta-button {
@@ -155,7 +164,7 @@ nav a {
 }
 
 /* ================================================= */
-/* FEATURE SECTION (Identique) */
+/* FEATURE SECTION */
 /* ================================================= */
 .features {
     background-color: var(--color-card-bg);
@@ -195,7 +204,6 @@ nav a {
 /* ================================================= */
 /* EGG GALLERY STYLES (Version Grid Premium)         */
 /* ================================================= */
-
 .egg-gallery-container {
     text-align: center;
     margin-bottom: 60px;
@@ -203,35 +211,32 @@ nav a {
 }
 
 .egg-gallery {
-    /* On utilise GRID pour un alignement parfait */
     display: grid;
-    /* Cela crée des colonnes automatiques de min 110px de large */
+    /* Colonnes auto-adaptables (min 110px) */
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 25px; /* Espace entre les oeufs */
-    
-    max-width: 800px; /* Largeur max pour ne pas trop étirer sur grand écran */
+    gap: 25px;
+    max-width: 800px;
     margin: 0 auto 30px auto;
 }
 
 .egg-gallery img {
-    width: 100%; /* Prend toute la largeur de sa case */
-    aspect-ratio: 1 / 1; /* Force l'image à rester parfaitement carrée */
-    object-fit: contain; /* L'image ne sera pas déformée */
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Carré parfait */
+    object-fit: contain;
     
-    background-color: var(--color-card-bg); /* Fond sombre derrière l'oeuf */
-    border: 2px solid rgba(255, 204, 0, 0.3); /* Bordure dorée subtile */
-    border-radius: 16px; /* Coins bien arrondis */
-    padding: 10px; /* Espace entre l'image et le bord */
+    background-color: var(--color-card-bg);
+    border: 2px solid rgba(255, 204, 0, 0.3);
+    border-radius: 16px;
+    padding: 10px;
     
-    transition: all 0.3s ease; /* Animation fluide */
+    transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Effet au survol de la souris */
 .egg-gallery img:hover {
-    border-color: var(--color-accent); /* La bordure devient jaune vif */
-    transform: translateY(-8px) scale(1.05); /* L'oeuf "lévite" et grossit un peu */
-    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2); /* Lueur dorée */
+    border-color: var(--color-accent);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2);
     cursor: pointer;
 }
 
@@ -246,9 +251,8 @@ nav a {
     color: var(--color-accent);
 }
 
-
 /* ================================================= */
-/* COMMANDS SECTION (Identique) */
+/* COMMANDS SECTION */
 /* ================================================= */
 .commands {
     text-align: center;
@@ -291,7 +295,7 @@ nav a {
 }
 
 /* ================================================= */
-/* UPDATES / PATCH NOTES SECTION (Identique) */
+/* UPDATES / PATCH NOTES SECTION */
 /* ================================================= */
 .updates {
     background-color: var(--color-dark-bg);
@@ -340,9 +344,8 @@ nav a {
     margin-bottom: 5px;
 }
 
-
 /* ================================================= */
-/* FOOTER (Identique) */
+/* FOOTER */
 /* ================================================= */
 footer {
     background-color: var(--color-card-bg);
@@ -366,4 +369,3 @@ footer p {
 .social-links a:hover {
     color: var(--color-accent);
 }
-
