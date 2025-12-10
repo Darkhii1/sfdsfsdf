@@ -193,52 +193,58 @@ nav a {
 }
 
 /* ================================================= */
-/* EGG GALLERY STYLES (CORRIGÉ 3x2) */
+/* EGG GALLERY STYLES (Version Grid Premium)         */
 /* ================================================= */
+
 .egg-gallery-container {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    padding: 0 20px;
 }
 
 .egg-gallery {
-    /* Utilisation de Flexbox pour contrôler le retour à la ligne */
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Plus d'espace entre les carrés */
-    margin: 0 auto 20px auto;
-    padding: 10px 0;
-    flex-wrap: wrap; 
-    max-width: 600px; /* Limite la largeur pour forcer 3x2 */
+    /* On utilise GRID pour un alignement parfait */
+    display: grid;
+    /* Cela crée des colonnes automatiques de min 110px de large */
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 25px; /* Espace entre les oeufs */
+    
+    max-width: 800px; /* Largeur max pour ne pas trop étirer sur grand écran */
+    margin: 0 auto 30px auto;
 }
 
 .egg-gallery img {
-    /* Carrés aux bords arrondis */
-    width: 100px; 
-    height: 100px;
-    border-radius: 10px; /* Bords arrondis */
+    width: 100%; /* Prend toute la largeur de sa case */
+    aspect-ratio: 1 / 1; /* Force l'image à rester parfaitement carrée */
+    object-fit: contain; /* L'image ne sera pas déformée */
     
-    display: block;
-    object-fit: contain;
+    background-color: var(--color-card-bg); /* Fond sombre derrière l'oeuf */
+    border: 2px solid rgba(255, 204, 0, 0.3); /* Bordure dorée subtile */
+    border-radius: 16px; /* Coins bien arrondis */
+    padding: 10px; /* Espace entre l'image et le bord */
     
-    background-color: var(--color-dark-bg);
-    border: 3px solid var(--color-accent);
-    padding: 5px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s ease; /* Animation fluide */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* Effet au survol de la souris */
 .egg-gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--color-accent);
+    border-color: var(--color-accent); /* La bordure devient jaune vif */
+    transform: translateY(-8px) scale(1.05); /* L'oeuf "lévite" et grossit un peu */
+    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2); /* Lueur dorée */
+    cursor: pointer;
 }
 
 .egg-count-claim {
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 600;
-    color: var(--color-text-light);
+    color: var(--color-text-dim);
+    margin-top: 20px;
 }
-/* ================================================= */
-/* END EGG GALLERY STYLES */
-/* ================================================= */
+
+.egg-count-claim strong {
+    color: var(--color-accent);
+}
 
 
 /* ================================================= */
@@ -360,3 +366,4 @@ footer p {
 .social-links a:hover {
     color: var(--color-accent);
 }
+
