@@ -110,7 +110,7 @@ nav a {
 }
 
 /* ================================================= */
-/* HERO SECTION (PREMIUM REDESIGN) */
+/* HERO SECTION (DESKTOP DEFAULT) */
 /* ================================================= */
 .hero {
     position: relative;
@@ -169,7 +169,6 @@ nav a {
     color: var(--color-text-light);
 }
 
-/* Texte Or avec Dégradé */
 .text-gradient {
     background: linear-gradient(to right, #ffcc00, #ffeb3b);
     -webkit-background-clip: text;
@@ -279,33 +278,92 @@ nav a {
     font-size: 1.2em;
 }
 
-/* --- ANIMATIONS & RESPONSIVE --- */
+/* --- ANIMATIONS --- */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
 }
 
+/* ================================================= */
+/* 📱 RESPONSIVE MOBILE FIX (VERSION CORRIGÉE)      */
+/* ================================================= */
 @media (max-width: 900px) {
+    section {
+        padding: 40px 5%; /* Moins de marge sur les côtés */
+    }
+
+    .hero {
+        min-height: auto; /* IMPORTANT : Enlève la hauteur forcée pour éviter la coupure */
+        padding-top: 50px;
+        padding-bottom: 60px;
+        display: block; /* Enlève le flex centré pour laisser couler le contenu */
+    }
+
     .hero-container {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 40px;
+        display: flex;
+        flex-direction: column-reverse; /* Image au-dessus ou dessous. Ici : Texte en bas, Image en haut */
+        gap: 30px;
+        width: 100%;
+        align-items: center;
     }
-    .hero-buttons {
-        justify-content: center;
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center; /* Centre tout le texte */
     }
+
+    .hero-content h1 {
+        font-size: 2.2em; /* Titre plus petit pour mobile */
+    }
+
     .hero-visual {
         padding: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        overflow: visible; /* Empêche de couper l'ombre ou le cercle */
     }
+
     .hero-logo-img {
-        width: 200px;
+        width: 180px; /* Image plus petite */
+        max-width: 80%;
     }
+    
+    .glowing-circle {
+        width: 250px;
+        height: 250px;
+    }
+
     .float-card {
-        display: none;
+        display: none; /* Cache la carte flottante sur mobile pour éviter de tout casser */
     }
-    .hero-content h1 {
-        font-size: 2.5em;
+    
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column; /* Boutons l'un sous l'autre */
+        gap: 15px;
+        width: 100%;
+    }
+    
+    .cta-button {
+        width: 100%; /* Boutons pleine largeur */
+        text-align: center;
+    }
+    
+    /* Ajustement du menu mobile */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    header {
+        flex-direction: column;
+        gap: 15px;
     }
 }
 
@@ -348,7 +406,7 @@ nav a {
 }
 
 /* ================================================= */
-/* EGG GALLERY STYLES (Grid Premium) */
+/* EGG GALLERY STYLES */
 /* ================================================= */
 .egg-gallery-container {
     text-align: center;
@@ -487,9 +545,6 @@ nav a {
     margin-bottom: 5px;
 }
 
-/* ================================================= */
-/* FOOTER */
-/* ================================================= */
 footer {
     background-color: var(--color-card-bg);
     text-align: center;
