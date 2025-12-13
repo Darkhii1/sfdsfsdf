@@ -46,7 +46,7 @@ section {
 }
 
 /* ================================================= */
-/* HEADER & NAVIGATION */
+/* HEADER & NAVIGATION (DESKTOP) */
 /* ================================================= */
 header {
     background-color: var(--color-card-bg);
@@ -110,7 +110,7 @@ nav a {
 }
 
 /* ================================================= */
-/* HERO SECTION (DEFAULT DESKTOP) */
+/* HERO SECTION (DESKTOP) */
 /* ================================================= */
 .hero {
     position: relative;
@@ -319,7 +319,7 @@ nav a {
 }
 
 /* ================================================= */
-/* EGG GALLERY STYLES + FEATURED EGG */
+/* EGG GALLERY + FEATURED (CHRISTMAS) */
 /* ================================================= */
 .egg-gallery-container {
     text-align: center;
@@ -327,7 +327,7 @@ nav a {
     padding: 0 20px;
 }
 
-/* --- FEATURED EGG (SHOWCASE DE NOËL) --- */
+/* FEATURED EGG STYLE */
 .featured-showcase {
     margin-bottom: 50px;
     position: relative;
@@ -340,7 +340,7 @@ nav a {
     height: 160px;
     object-fit: contain;
     background-color: rgba(255, 0, 0, 0.05);
-    border: 3px solid #ff0000;
+    border: 3px solid #ff0000; /* Rouge Noël */
     border-radius: 20px;
     padding: 15px;
     box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
@@ -376,7 +376,7 @@ nav a {
     font-size: 1.2em;
 }
 
-/* --- GRILLE CLASSIQUE --- */
+/* GRID CLASSIQUE */
 .egg-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
@@ -416,24 +416,21 @@ nav a {
 }
 
 /* ================================================= */
-/* COMMANDS SECTION */
+/* COMMANDS & UPDATES */
 /* ================================================= */
-.commands {
+.commands, .updates {
     text-align: center;
 }
-
-.commands h3 {
+.commands h3, .updates h3 {
     font-size: 2em;
     margin-bottom: 40px;
 }
-
 .command-list {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
 }
-
 .command-item {
     background-color: var(--color-card-bg);
     padding: 20px;
@@ -442,7 +439,6 @@ nav a {
     text-align: left;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
-
 .command-item code {
     display: inline-block;
     background-color: var(--color-dark-bg);
@@ -453,23 +449,7 @@ nav a {
     font-size: 1.1em;
     margin-bottom: 15px;
 }
-
-.command-item p {
-    color: var(--color-text-dim);
-}
-
-/* ================================================= */
-/* UPDATES / PATCH NOTES SECTION */
-/* ================================================= */
-.updates {
-    background-color: var(--color-dark-bg);
-    text-align: center;
-}
-
-.updates h3 {
-    font-size: 2em;
-    margin-bottom: 40px;
-}
+.command-item p { color: var(--color-text-dim); }
 
 .patch-list {
     display: flex;
@@ -479,34 +459,16 @@ nav a {
     margin: 0 auto;
     text-align: left;
 }
-
 .patch-item {
     background-color: var(--color-card-bg);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
-
-.patch-item h4 {
-    color: var(--color-text-light);
-    margin-bottom: 5px;
-}
-
-.patch-item .patch-date {
-    color: var(--color-accent);
-    font-size: 0.9em;
-    margin-bottom: 10px;
-}
-
-.patch-item ul {
-    list-style: disc;
-    margin-left: 20px;
-    color: var(--color-text-dim);
-}
-
-.patch-item ul li {
-    margin-bottom: 5px;
-}
+.patch-item h4 { color: var(--color-text-light); margin-bottom: 5px; }
+.patch-item .patch-date { color: var(--color-accent); font-size: 0.9em; margin-bottom: 10px; }
+.patch-item ul { list-style: disc; margin-left: 20px; color: var(--color-text-dim); }
+.patch-item ul li { margin-bottom: 5px; }
 
 footer {
     background-color: var(--color-card-bg);
@@ -514,124 +476,130 @@ footer {
     padding: 20px 5%;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+footer p { color: var(--color-text-dim); margin-bottom: 10px; font-size: 0.9em; }
+.social-links a { color: var(--color-text-light); margin: 0 10px; font-size: 0.9em; }
+.social-links a:hover { color: var(--color-accent); }
 
-footer p {
-    color: var(--color-text-dim);
-    margin-bottom: 10px;
-    font-size: 0.9em;
-}
+/* ================================================= */
+/* 📱 MENU MOBILE & RESPONSIVE DESIGN (FINAL)       */
+/* ================================================= */
 
-.social-links a {
+/* Bouton Burger caché par défaut */
+.menu-toggle {
+    display: none;
+    font-size: 1.8em;
     color: var(--color-text-light);
-    margin: 0 10px;
-    font-size: 0.9em;
+    cursor: pointer;
 }
 
-.social-links a:hover {
-    color: var(--color-accent);
-}
-
-/* ================================================= */
-/* 📱 RESPONSIVE MOBILE FIX (COMPACT VERSION)       */
-/* ================================================= */
 @media (max-width: 900px) {
-    /* On réduit le padding global pour gagner de la place */
+    /* 1. Header et Navigation */
+    header {
+        position: relative; 
+        padding: 15px 5%;
+        flex-wrap: wrap; 
+    }
+
+    .menu-toggle {
+        display: block; /* On affiche le burger sur mobile */
+        order: 2; /* À droite */
+    }
+    
+    .logo {
+        order: 1; /* À gauche */
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        display: none; /* Caché par défaut */
+        margin-top: 15px;
+    }
+
+    /* Cette classe est ajoutée par le script JS */
+    nav.active {
+        display: block;
+        animation: slideDown 0.3s ease-out forwards;
+    }
+
+    nav ul {
+        flex-direction: column;
+        background-color: var(--color-card-bg);
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    nav ul li {
+        margin: 0;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: center;
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .invite-button {
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* 2. Hero Section Compacte */
     section {
-        padding: 30px 5%; 
+        padding: 30px 5%; /* Moins de marge globale */
     }
 
     .hero {
-        min-height: auto; /* Supprime la hauteur forcée */
-        padding-top: 20px; /* Très peu d'espace en haut */
-        padding-bottom: 30px;
-        display: flex; /* Flex pour gérer l'ordre */
+        min-height: auto;
+        padding-top: 30px;
+        padding-bottom: 40px;
+        display: flex;
         flex-direction: column;
     }
 
     .hero-container {
         flex-direction: column-reverse; /* Texte en bas, Image en haut */
-        gap: 15px; /* On colle un peu plus les éléments */
+        gap: 20px;
         width: 100%;
         align-items: center;
     }
 
     .hero-content {
-        max-width: 100%;
         text-align: center;
+        max-width: 100%;
     }
-
-    .hero-content h1 {
-        font-size: 1.8em; /* Titre plus petit */
-        margin-bottom: 10px;
-        line-height: 1.2;
-    }
-
-    .hero-content p {
-        font-size: 1em; /* Texte plus petit */
-        margin-bottom: 20px;
-    }
-
+    
+    .hero-content h1 { font-size: 2em; line-height: 1.2; }
+    .hero-content p { font-size: 1em; }
+    
     .hero-visual {
         padding: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 0; /* Pas de marge inutile */
+        margin-bottom: 0;
         overflow: visible;
     }
 
     .hero-logo-img {
-        width: 130px; /* LOGO BEAUCOUP PLUS PETIT SUR MOBILE */
+        width: 140px; /* Logo réduit sur mobile */
         max-width: 60%;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
     
-    .glowing-circle {
-        width: 180px; /* Cercle lumineux réduit */
-        height: 180px;
-    }
-
-    .float-card {
-        display: none; 
-    }
+    .float-card { display: none; }
     
     .hero-buttons {
-        justify-content: center;
         flex-direction: column;
-        gap: 10px;
         width: 100%;
     }
     
     .cta-button {
         width: 100%;
         text-align: center;
-        padding: 12px 20px; /* Boutons un peu moins hauts */
     }
+}
 
-    .version-badge {
-        font-size: 0.75em;
-        padding: 4px 10px;
-        margin-bottom: 10px;
-    }
-    
-    /* Menu Mobile Compact */
-    header {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 5%;
-    }
-    
-    .site-logo {
-        height: 40px; /* Logo menu plus petit */
-    }
-    
-    .logo-text {
-        font-size: 1.4em;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 5px;
-        padding: 5px 0;
-    }
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
